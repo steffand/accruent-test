@@ -1,0 +1,43 @@
+services:
+  sql-server-db:
+    container_name: sql-server-db
+    image: rapidfort/microsoft-sql-server-2019-ib:latest
+    ports:
+      - "1433:1433"
+    environment:
+      MSSQL_SA_PASSWORD: AccruentTest@25
+      ACCEPT_EULA: Y
+    networks:
+      - accruent-network
+
+  backend-api:
+    container_name: backend-api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "7283:80"
+    depends_on:
+      - sql-server-db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Server=sql-server-db;Database=AccruentDB;User=sa;Password=AccruentTest@25;Trusted_Connection=False;TrustServerCertificate=True;
+    networks:
+      - accruent-network
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend-api
+    networks:
+      - accruent-network
+
+networks:
+  accruent-network:
+    driver: bridge

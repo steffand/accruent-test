@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Relatório de Estoque</h2>
+
+    <div *ngIf="warningMessage" class="alert alert-warning">
+      {{ warningMessage }}
+    </div>
+
+    <div *ngIf="isLoading" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Carregando...</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #relatorioForm="ngForm">
+      <div class="form-group">
+        <label for="movementDate">Data da Movimentação</label>
+        <input
+          type="date"
+          id="movementDate"
+          name="movementDate"
+          [(ngModel)]="filters.movementDate"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="productCode">Código do Produto</label>
+        <input
+          type="text"
+          id="productCode"
+          name="productCode"
+          [(ngModel)]="filters.productCode"
+          class="form-control"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!relatorioForm.form.valid">
+        Gerar Relatório
+      </button>
+    </form>
+
+    <div *ngIf="reportData.length > 0" class="report-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Código</th>
+            <th>Entradas</th>
+            <th>Saídas</th>
+            <th>Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of reportData">
+            <td>{{ item.productName }}</td>
+            <td>{{ item.productCode }}</td>
+            <td>{{ item.inbounds }}</td>
+            <td>{{ item.outbounds }}</td>
+            <td>{{ item.balance }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
