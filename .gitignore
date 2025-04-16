@@ -1,0 +1,17 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/backend/.vs
+/backend/Accruent.Api/bin/
+/backend/Accruent.Api/obj
+/backend/Accruent.Api/Accruent.Api.csproj.user
+/backend/Accruent.Data/bin
+/backend/Accruent.Data/obj
+/backend/Accruent.Domain/bin
+/backend/Accruent.Domain/obj
+/backend/Accruent.Models/bin
+/backend/Accruent.Models/obj
+/backend/Accruent.UnitTests/obj
+/backend/Accruent.UnitTests/bin

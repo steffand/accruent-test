@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="form-wrapper">
+    <h2>Cadastro de Movimentação de Estoque</h2>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="isLoading" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>Carregando...</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #movementForm="ngForm">
+      <div class="form-group">
+        <label for="productCode">Código do Produto</label>
+        <input
+          type="text"
+          id="productCode"
+          name="productCode"
+          [(ngModel)]="movement.productCode"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Tipo de Movimentação</label>
+        <select
+          id="type"
+          name="type"
+          [(ngModel)]="movement.type"
+          required
+          class="form-control"
+        >
+          <option value="Inbound">Entrada</option>
+          <option value="Outbound">Saída</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantidade</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          [(ngModel)]="movement.quantity"
+          required
+          class="form-control"
+        />
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="!movementForm.form.valid">
+        Cadastrar Movimentação
+      </button>
+    </form>
+  </div>
+</div>
