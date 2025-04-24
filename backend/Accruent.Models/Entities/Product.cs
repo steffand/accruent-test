@@ -1,4 +1,4 @@
-﻿namespace Accruent.Models.Entity;
+﻿namespace Accruent.Models.Entities;
 
 public sealed class Product
 {

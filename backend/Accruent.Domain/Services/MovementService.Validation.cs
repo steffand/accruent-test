@@ -1,13 +1,14 @@
-﻿using Accruent.Data.Interface;
-using Accruent.Models.Dto;
-using Accruent.Models.Entity;
+﻿using Accruent.Data.Interfaces;
+using Accruent.Domain.Interfaces;
+using Accruent.Models.Dtos;
+using Accruent.Models.Entities;
 using Accruent.Models.Enums;
-using Accruent.Models.Exception;
+using Accruent.Models.Exceptions;
 using Microsoft.Extensions.Logging;
 
 namespace Accruent.Domain.Services;
 
-public class MovementServiceValidation(IMovementService service, 
+public sealed class MovementServiceValidation(IMovementService service, 
                                        IBaseRepository<Movement> movementRepository,
                                        IBaseRepository<Product> productRepository,
                                        ILogger<MovementService> logger) : MovementServiceDecorator(service, logger)

@@ -1,6 +1,6 @@
-﻿using Accruent.Data.Interface;
+﻿using Accruent.Data.Interfaces;
 using Accruent.Domain.Services;
-using Accruent.Models.Entity;
+using Accruent.Models.Entities;
 using Accruent.Models.Enums;
 using NSubstitute;
 

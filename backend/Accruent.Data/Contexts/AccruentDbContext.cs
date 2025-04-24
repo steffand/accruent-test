@@ -1,7 +1,7 @@
-﻿using Accruent.Models.Entity;
+﻿using Accruent.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Accruent.Data.Context;
+namespace Accruent.Data.Contexts;
 
 public class AccruentDbContext : DbContext
 {

@@ -1,9 +1,9 @@
 using Accruent.Api.Controllers;
-using Accruent.Data.Interface;
-using Accruent.Domain;
-using Accruent.Models.Dto;
-using Accruent.Models.Entity;
-using Accruent.Models.Exception;
+using Accruent.Data.Interfaces;
+using Accruent.Domain.Interfaces;
+using Accruent.Models.Dtos;
+using Accruent.Models.Entities;
+using Accruent.Models.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;

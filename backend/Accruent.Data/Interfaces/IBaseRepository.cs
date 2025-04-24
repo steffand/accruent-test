@@ -1,4 +1,4 @@
-﻿namespace Accruent.Data.Interface;
+﻿namespace Accruent.Data.Interfaces;
 
 public interface IBaseRepository<T>
 {

@@ -1,12 +1,12 @@
-﻿using Accruent.Data.Interface;
-using Accruent.Domain.Interface;
-using Accruent.Models.Dto;
-using Accruent.Models.Entity;
+﻿using Accruent.Data.Interfaces;
+using Accruent.Domain.Interfaces;
+using Accruent.Models.Dtos;
+using Accruent.Models.Entities;
 using Accruent.Models.Enums;
 
 namespace Accruent.Domain.Services;
 
-public class ReportService(IBaseRepository<Movement> movementRepository, IBaseRepository<Product> productRepository) : IReportService
+public sealed class ReportService(IBaseRepository<Movement> movementRepository, IBaseRepository<Product> productRepository) : IReportService
 {
     public List<ReportDto> GetReportData(DateTime movementDate, string? productCode)
     {

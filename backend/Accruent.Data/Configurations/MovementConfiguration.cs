@@ -1,10 +1,10 @@
-﻿using Accruent.Models.Entity;
+﻿using Accruent.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Accruent.Data.Configuration;
+namespace Accruent.Data.Configurations;
 
-public class MovementConfiguration : IEntityTypeConfiguration<Movement>
+public sealed class MovementConfiguration : IEntityTypeConfiguration<Movement>
 {
     public void Configure(EntityTypeBuilder<Movement> builder)
     {

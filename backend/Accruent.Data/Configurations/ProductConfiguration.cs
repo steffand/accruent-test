@@ -1,10 +1,10 @@
-﻿using Accruent.Models.Entity;
+﻿using Accruent.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Accruent.Data.Configuration;
+namespace Accruent.Data.Configurations;
 
-internal class ProductConfiguration : IEntityTypeConfiguration<Product>
+public sealed class ProductConfiguration : IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {

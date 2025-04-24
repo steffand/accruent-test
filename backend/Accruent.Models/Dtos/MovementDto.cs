@@ -1,8 +1,6 @@
-﻿using Accruent.Models.Enums;
+﻿namespace Accruent.Models.Dtos;
 
-namespace Accruent.Models.Dto;
-
-public class MovementDto
+public sealed class MovementDto
 {
     public string ProductCode { get; set; } = default!;
     public string Type { get; set; } = default!;
