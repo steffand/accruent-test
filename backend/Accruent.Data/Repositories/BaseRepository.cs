@@ -1,7 +1,7 @@
-﻿using Accruent.Data.Context;
+﻿using Accruent.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 
-namespace Accruent.Data.Repository;
+namespace Accruent.Data.Repositories;
 
 public abstract class BaseRepository<T>(AccruentDbContext dbContext) where T : class
 {

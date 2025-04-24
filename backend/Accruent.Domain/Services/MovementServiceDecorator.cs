@@ -1,4 +1,5 @@
-﻿using Accruent.Models.Dto;
+﻿using Accruent.Domain.Interfaces;
+using Accruent.Models.Dtos;
 using Microsoft.Extensions.Logging;
 
 namespace Accruent.Domain.Services;

@@ -1,10 +1,9 @@
-using Accruent.Data.Context;
-using Accruent.Data.Interface;
-using Accruent.Data.Repository;
-using Accruent.Domain;
-using Accruent.Domain.Interface;
+using Accruent.Data.Contexts;
+using Accruent.Data.Interfaces;
+using Accruent.Data.Repositories;
+using Accruent.Domain.Interfaces;
 using Accruent.Domain.Services;
-using Accruent.Models.Entity;
+using Accruent.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

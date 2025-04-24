@@ -1,6 +1,6 @@
-﻿using Accruent.Models.Dto;
+﻿using Accruent.Models.Dtos;
 
-namespace Accruent.Domain;
+namespace Accruent.Domain.Interfaces;
 
 public interface IMovementService
 {

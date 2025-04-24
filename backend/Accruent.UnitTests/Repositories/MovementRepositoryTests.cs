@@ -1,6 +1,6 @@
-﻿using Accruent.Data.Context;
-using Accruent.Data.Repository;
-using Accruent.Models.Entity;
+﻿using Accruent.Data.Contexts;
+using Accruent.Data.Repositories;
+using Accruent.Models.Entities;
 using Accruent.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 

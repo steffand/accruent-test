@@ -1,8 +1,9 @@
-﻿using Accruent.Models.Dto;
+﻿using Accruent.Domain.Interfaces;
+using Accruent.Models.Dtos;
 
 namespace Accruent.Domain.Services;
 
-public class MovementService : IMovementService
+public sealed class MovementService : IMovementService
 {
     public Task ProcessAsync(MovementDto movement, CancellationToken cancellationToken)
     {

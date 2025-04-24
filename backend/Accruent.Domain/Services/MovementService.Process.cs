@@ -1,10 +1,11 @@
-﻿using Accruent.Models.Dto;
+﻿using Accruent.Domain.Interfaces;
+using Accruent.Models.Dtos;
 using Accruent.Models.Enums;
 using Microsoft.Extensions.Logging;
 
 namespace Accruent.Domain.Services;
 
-public class MovementServiceProcess(IMovementService service, ILogger<MovementService> logger) : MovementServiceDecorator(service, logger)
+public sealed class MovementServiceProcess(IMovementService service, ILogger<MovementService> logger) : MovementServiceDecorator(service, logger)
 {
     public override async Task ProcessAsync(MovementDto movement, CancellationToken cancellationToken)
     {
